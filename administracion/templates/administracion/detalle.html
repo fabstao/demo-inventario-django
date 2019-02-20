@@ -1,0 +1,19 @@
+<html>
+<body>
+{% if bodega %}
+<h2>BODEGA: {{ bodega.nombre }} </h2>
+<ul>
+<li>{{ bodega.calle }} - {{ bodega.exterior }} int {{ bodega.interior }}</li>
+<li>{{ bodega.fraccionamiento }}</li>
+<li>{{ bodega.ciudad }} CP (Zip Code) {{ bodega.codigo_postal }}</li>
+<li>{{ bodega.entidad }}</li>
+<li>{{ bodega.pais }}</li>
+<li>Teléfono: {{ bodega.telefono }}</li>
+</ul>
+
+<h4><a href="https://www.google.com/maps/search/{{ bodega.calle|urlencode }}+{{ bodega.exterior|urlencode }}+{{ bodega.fraccionamiento|urlencode }}+{{ bodega.ciudad|urlencode }}+{{ bodega.entidad|urlencode }}+{{ bodega.pais|urlencode }}" target="_new">Buscar ubicación</a></h4>
+{% else %}
+<h3 color="red">No hay detalles de la bodega</h3>
+{% endif %}
+</body>
+</html>

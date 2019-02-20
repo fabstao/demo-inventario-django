@@ -1,0 +1,14 @@
+<html>
+<body>
+{% if lasbodegas %}
+<h3>Bodegas:<h3>
+<ul>
+{% for bodega in lasbodegas %}
+    <li><a href="{% url 'administracion:detalle' bodega.id %}">{{ bodega.nombre }} {{ bodega.id }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h3 color="red">No hay bodegas en el sistema</h3>
+{% endif %}
+</body>
+</html>
