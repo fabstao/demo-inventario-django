@@ -18,9 +18,18 @@ class Item(models.Model):
     def __str__(self):
         return(self.nombre)
     
-class Stock(models.Model):
+class EnSal(models.Model):
+    mov = models.CharField(max_length=10)
+    def __str__(self):
+        return(self.mov)
+
+class Movimiento(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     bodega = models.ForeignKey(Bodegas, on_delete=models.CASCADE)
+    fecha = models.DateTimeField('Fecha de Movimiento')
+    movimiento = models.ForeignKey(EnSal, on_delete=models.CASCADE) #Should not be cascade, check later
     def __str__(self):
-        return str(self.cantidad)
+        return str(self.movimiento)+" de "+str(self.item)
+
+
