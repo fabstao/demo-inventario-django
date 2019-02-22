@@ -1,0 +1,18 @@
+<html>
+<body>
+{% if item %}
+<h2>{{ item.nombre }} </h2>
+<ul>
+<li>SKU: {{ item.sku }} - Costo: ${{ item.costo }}</li>
+<li>{{ item.descripcion }}</li>
+<li>Peso: {{ item.peso }}g</li>
+<li>Ancho: {{ item.ancho }}cm</li>
+<li>Alto: {{ item.alto }}</li>
+<li>Profundidad: {{ item.profundidad }}</li>
+</ul>
+
+{% else %}
+<h3 color="red">No hay detalles del item</h3>
+{% endif %}
+</body>
+</html>

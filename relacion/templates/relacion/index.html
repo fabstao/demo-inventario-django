@@ -1,0 +1,15 @@
+<html>
+<body>
+{% if lista_de_items %}
+<h2>Items:<h2>
+<br>
+<ul>
+{% for item in lista_de_items %}
+    <li><a href="{% url 'relacion:detalle' item.id %}">{{ item.sku }} {{ item.nombre }} $ {{item.costo}}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h3 color="red">No hay items en el sistema</h3>
+{% endif %}
+</body>
+</html>

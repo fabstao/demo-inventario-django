@@ -10,7 +10,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = models.Item
-    context_object_name = 'detalle'
+    context_object_name = 'item'
     template_name = "relacion/detalle.html"
 
 class BuscarView(generic.ListView):
