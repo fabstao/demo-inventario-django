@@ -1,13 +1,18 @@
 <html>
 <body>
 {% if lista_de_items %}
-<h2>Items:<h2>
+<h2>Items:</h2>
 <br>
+<h3>Catálogo:</h3>
 <ul>
 {% for item in lista_de_items %}
-    <li><a href="{% url 'relacion:detalle' item.id %}">{{ item.sku }} {{ item.nombre }} $ {{item.costo}}</a></li>
+    <li><a href="{% url 'relacion:detalle' item.id %}">{{ item.sku }}</a> - {{ item.nombre }} $ {{item.costo}}</li>
 {% endfor %}
 </ul>
+<h3>Stock:</h3>
+<p>
+{{ cantidades }}
+</p>
 {% else %}
 <h3 color="red">No hay items en el sistema</h3>
 {% endif %}
