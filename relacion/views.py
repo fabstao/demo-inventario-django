@@ -8,8 +8,8 @@ class IndexView(generic.TemplateView):
     template_name = "relacion/index.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        litems = models.Item.objects.all()[:5]
-        lstock = models.Movimiento.objects.all()[:5]
+        litems = models.Item.objects.all()
+        lstock = models.Movimiento.objects.all()
         cant = {}
         i = 0
         print(litems)
