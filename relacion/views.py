@@ -17,9 +17,9 @@ class IndexView(generic.TemplateView):
         for lit in litems:
             for stk in lstock:
                 if lit.id == stk.item.id:
-                    if str(stk.movimiento) == "entrada":
+                    if str(stk.movimiento) == "Entrada":
                         i+=stk.cantidad
-                    if str(stk.movimiento) == "salida":
+                    if str(stk.movimiento) == "Salida":
                         i-=stk.cantidad
                     print(i)
                     cant[lit.nombre] = i

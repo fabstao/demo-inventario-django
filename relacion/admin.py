@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Item,Movimiento
+from .models import Item,Movimiento,EnSal
 
 # Register your models here.
 
@@ -18,4 +18,5 @@ class MovimientoAdmin(admin.ModelAdmin):
     ) 
 
 admin.site.register(Item)
+admin.site.register(EnSal)
 admin.site.register(Movimiento, MovimientoAdmin)
