@@ -1,20 +1,30 @@
 <html>
 <body>
+	<nav>
+		<li>Bodegas <a href="/administracion"></li>
+		<li>Consola de administraci&oacute;n <a href="/admin"></li>
+	</nav>
 {% if lista_de_items %}
-<h2>Items:</h2>
-<br>
-<h3>Catálogo:</h3>
-<ul>
-{% for item in lista_de_items %}
-    <li><a href="{% url 'relacion:detalle' item.id %}">{{ item.sku }}</a> - {{ item.nombre }} $ {{item.costo}}</li>
-{% endfor %}
-</ul>
-<h3>Stock:</h3>
-<p>
-{{ cantidades }}
-</p>
+	<article>
+		<h2>Items:</h2>
+		<br>
+		<h3>Catálogo:</h3>
+		<ul>
+		{% for item in lista_de_items %}
+		    <li><a href="{% url 'relacion:detalle' item.id %}">{{ item.sku }}</a> - {{ item.nombre }} $ {{item.costo}}</li>
+		{% endfor %}
+		</ul>
+	</article>
+	<article>
+		<h3>Stock:</h3>
+		<p>
+		{{ cantidades }}
+		</p>
+	</article>
 {% else %}
-<h3 color="red">No hay items en el sistema</h3>
+	<article>
+		<h3 color="red">No hay items en el sistema</h3>
+	</article>
 {% endif %}
 </body>
 </html>
