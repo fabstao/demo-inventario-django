@@ -1,6 +1,6 @@
 FROM python:3
 ENV WORKDIR=/opt/demo
-ENV DBNAME=inventariodb
+ENV DBNAME=invdb1
 ENV DBUSER=invuser
 ENV DBPASS=invpass.12
 ENV DBHOST=invdb1
