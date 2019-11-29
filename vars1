@@ -1,0 +1,6 @@
+export WORKDIR=/opt/demo
+export DBNAME=invdb1
+export DBUSER=invuser
+export DBPASS=invpass.12
+export DBHOST=pgsql
+export DBPORT=5432
