@@ -1,3 +1,4 @@
+import platform
 from django.shortcuts import render
 from django.views import generic
 from . import models
@@ -26,6 +27,7 @@ class IndexView(generic.TemplateView):
         context['lista_de_items'] = models.Item.objects.all()[:5]
         context['stock'] = models.Movimiento.objects.all()[:5]
         context['cantidades'] = cant
+        context['hostname'] = platform.node()
         return context    
 
 class oldIndexView(generic.ListView):

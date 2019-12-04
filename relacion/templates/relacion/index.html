@@ -6,6 +6,9 @@
 		<li><a href="/administracion">Bodegas</a> </li>
 		<li><a href="/admin">Consola de administraci&oacute;n</a> </li>
 	</nav>
+{% if hostname %}
+<h2>{{ hostname }}</h2>
+{% endif %}
 	</header>
 {% if lista_de_items %}
 	<article>
